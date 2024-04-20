@@ -1,5 +1,7 @@
 package tech.jamersondev.springFeignLab.model.records;
 
 
-public record Detail(String periodo, Integer frequencia) {
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+public record Detail(@JsonProperty("periodo") String period, @JsonProperty("frequencia") Integer frequency) {
 }

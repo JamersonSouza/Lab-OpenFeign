@@ -1,64 +1,32 @@
 package tech.jamersondev.springFeignLab.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import tech.jamersondev.springFeignLab.model.records.Detail;
 
 import java.util.List;
 
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 public class Names {
-    private String nome;
+    @JsonProperty("nome")
+    private String name;
     private String sexo;
-    private String localidade;
-    private List<Detail> res;
-
-    public Names() {
-    }
-
-    public Names(String nome, String sexo, String localidade, List<Detail> res) {
-        this.nome = nome;
-        this.sexo = sexo;
-        this.localidade = localidade;
-        this.res = res;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getSexo() {
-        return sexo;
-    }
-
-    public void setSexo(String sexo) {
-        this.sexo = sexo;
-    }
-
-    public String getLocalidade() {
-        return localidade;
-    }
-
-    public void setLocalidade(String localidade) {
-        this.localidade = localidade;
-    }
-
-    public List<Detail> getRes() {
-        return res;
-    }
-
-    public void setRes(List<Detail> res) {
-        this.res = res;
-    }
+    @JsonProperty("localidade")
+    private String locality;
+    @JsonProperty("res")
+    private List<Detail> detail;
 
     @Override
     public String toString() {
-            return
-                "nome='" + nome + '\'' +
-                ", sexo='" + sexo + '\'' +
-                ", localidade='" + localidade + '\'' +
-                ", res=" + res
-               ;
+        return
+                "Nome='" + name + '\'' +
+                ", Sexo='" + sexo + '\'' +
+                ", Localidade='" + locality + '\'' +
+                ", Result=" + detail
+                ;
     }
 }
