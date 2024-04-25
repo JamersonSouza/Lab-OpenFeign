@@ -26,6 +26,7 @@ public class SpringFeignLabApplication implements CommandLineRunner {
 		LabMain main = new LabMain(ibgeConsumer, conversor);
 		//main.getNameAndSexo();
 		//main.getNameRankingByCounty();
-		main.getNameRankingByDecade();
+		//main.getNameRankingByDecade();
+		main.getRankingBySexo();
 	}
 }

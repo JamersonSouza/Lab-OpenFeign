@@ -1,5 +1,6 @@
 package tech.jamersondev.springFeignLab.main;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import tech.jamersondev.springFeignLab.Util.Conversor;
 import tech.jamersondev.springFeignLab.interfaces.FeignConsumerIBGEApi;
 import tech.jamersondev.springFeignLab.model.Detail;
@@ -40,6 +41,16 @@ public class LabMain {
             List<Detail> detail = names.getDetail().stream().map(n -> new Detail(n.name(), n.frequency(),
                     n.ranking())).toList();
             System.out.println(names.getLocality() +"\n"+ detail);
+        }
+    }
+
+    public void getRankingBySexo() throws Exception {
+        String body = ibgeConsumer.rankingBySexo("F");
+        Names[] data = conversor.getData(body, Names[].class);
+        for(Names names : Arrays.stream(data).toList()){
+            List<Detail> detail = names.getDetail().stream().map(n -> new Detail(n.name(), n.frequency(),
+                    n.ranking())).toList();
+            System.out.println(names.getLocality() +"\n" + names.getSexo() +"\n"+ detail);
         }
     }
 }
