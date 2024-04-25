@@ -24,6 +24,8 @@ public class SpringFeignLabApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		LabMain main = new LabMain(ibgeConsumer, conversor);
-		main.getName();
+		//main.getNameAndSexo();
+		//main.getNameRankingByCounty();
+		main.getNameRankingByDecade();
 	}
 }
